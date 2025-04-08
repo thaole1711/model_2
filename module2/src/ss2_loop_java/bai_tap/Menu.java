@@ -51,7 +51,7 @@ public class Menu {
                 }
                 break;
             case 4:
-                System.exit(4);
+                System.exit(0);
         }
 
     }
