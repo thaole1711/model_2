@@ -42,13 +42,17 @@ public class Fan {
 
     @Override
     public String toString() {
-        String statusFan = this.isOn ? "fan is on" : "fan is off";
-        return "Fan{" +
+        String statusFan = this.isOn ? "Fan{" +
                 "speed=" + speed +
-                ", isOn=" + statusFan +
+                ", Fan is on" +
+                ", radius=" + radius +
+                ", color='" + color + '\'' +
+                '}' : "Fan{" +
+                "Fan is off" +
                 ", radius=" + radius +
                 ", color='" + color + '\'' +
                 '}';
+        return statusFan;
 
     }
 
