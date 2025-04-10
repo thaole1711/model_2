@@ -4,13 +4,23 @@ import java.util.Scanner;
 
 public class Display {
     public static void main(String[] args) {
-
+     Menu();
     }
     public static void Menu(){
-        Scanner scanner= new Scanner(System.in);
-        System.out.println("nhập số bạn chọn");
-            byte number= scanner.nextByte();
-            switch (number){
+        Scanner scanner = new Scanner(System.in);
+        byte number ;
+        do {
+
+            System.out.println("menu");
+            System.out.println("1.display");
+            System.out.println("2.add");
+            System.out.println("3.delete");
+            System.out.println("4. update");
+            System.out.println("5. search");
+            System.out.println("6.exit");
+            System.out.println("nhập số bạn chọn");
+            number = scanner.nextByte();
+            switch (number) {
                 case 1:
                     System.out.println("display");
                     break;
@@ -27,9 +37,9 @@ public class Display {
                     System.out.println("search");
                     break;
                 case 6:
-                    System.out.println("exist");
+                    System.out.println("exit");
                     break;
             }
-
+        }while (number!=6);
     }
 }
