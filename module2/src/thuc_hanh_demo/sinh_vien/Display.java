@@ -1,4 +1,4 @@
-package ss2_loop_java.thuc_hanh;
+package thuc_hanh_demo.sinh_vien;
 
 import java.util.Scanner;
 
@@ -39,6 +39,7 @@ public class Display {
                 case 6:
                     System.out.println("exit");
                     break;
+
             }
         }while (number!=6);
     }
