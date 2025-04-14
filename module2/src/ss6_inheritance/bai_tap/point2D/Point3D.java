@@ -14,14 +14,13 @@ public class Point3D extends Point2D{
     public void setZ(float z) {
         this.z = z;
     }
-    public void setXyz(float x, float y,float z) {
-       setXy(x,y);
+    public void setXYZ(float x, float y, float z) {
+       setXY(x,y);
         this.z=z;
     }
-    public float[] getXyz() {
+    public float[] getXYZ() {
         return new float[] {x,y,z};
     }
-
     @Override
     public String toString() {
         return "Point3D(" +x +","+y+","+z+")";

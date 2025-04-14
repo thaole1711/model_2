@@ -7,7 +7,8 @@ public class Test {
         System.out.println( circle.toString());
         Cylinder cylinder= new Cylinder(5,"yellow",4);
         System.out.println("hình trụ");
-        System.out.println(cylinder.toString());
-
+        System.out.println(cylinder);
+        System.out.println("diện tích hình trụ là:"+cylinder.area());
+        System.out.println("thể tích hình trụ là:"+cylinder.volume());
     }
 }

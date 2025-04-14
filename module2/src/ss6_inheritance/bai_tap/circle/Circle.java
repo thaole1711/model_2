@@ -23,10 +23,9 @@ public class Circle {
     public void setRadius(double radius) {
         this.radius = radius;
     }
-    public double area(double radius){
-      return radius*radius*Math.PI  ;
+    public double area(){
+      return Math.PI*getRadius()*getRadius()  ;
     }
-
     @Override
     public String toString() {
         return "Circle :" +
