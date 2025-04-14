@@ -1,4 +1,4 @@
-package ss5_access_modifier.bai_tap.QuanLySua;
+package ss5_access_modifier.bai_tap.quan_ly_sua;
 
 import java.util.Scanner;
 
@@ -12,7 +12,7 @@ public class ProductManagement {
         product[2] = new Product(3, "milo", 7000);
     }
 
-    public void Display() {
+    public void display() {
         for (int i = 0; i < product.length; i++) {
             if (product[i] != null) {
                 System.out.println(product[i]);
@@ -22,7 +22,7 @@ public class ProductManagement {
         }
     }
 
-    public void Add() {
+    public void add() {
         System.out.println("nhập mã loại sữa:");
         int idNew = Integer.parseInt(scanner.nextLine());
         System.out.println("nhập tên loại sữa:");
@@ -37,7 +37,7 @@ public class ProductManagement {
         }
     }
 
-    public void Update() {
+    public void update() {
         System.out.println("nhập id bạn muốn thay đổi sản phẩm");
         int updateId = Integer.parseInt(scanner.nextLine());
         boolean found = false;
@@ -57,7 +57,7 @@ public class ProductManagement {
         }
     }
 
-    public void Delete() {
+    public void delete() {
         System.out.println("nhập id sản phẩm bạn muốn xoa");
         int deleteId = scanner.nextInt();
         boolean found = false;
@@ -76,7 +76,7 @@ public class ProductManagement {
             System.out.println("không tìm thấy id bạn nhập vào");
         }
     }
-    public void Search(){
+    public void search(){
         System.out.println("nhập tên sản phẩm bạn muốn tìm kiếm");
         String SearchName=scanner.nextLine();
         boolean found=false;

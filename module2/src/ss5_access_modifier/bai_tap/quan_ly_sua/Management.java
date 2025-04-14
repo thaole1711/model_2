@@ -1,11 +1,11 @@
-package ss5_access_modifier.bai_tap.QuanLySua;
+package ss5_access_modifier.bai_tap.quan_ly_sua;
 
 import java.util.Scanner;
 
 public class Management {
     public static void main(String[] args) {
         Scanner scanner= new Scanner(System.in);
-        ProductManagement typeOfMilk=new ProductManagement();
+        ProductManagement productManagement=new ProductManagement();
 
         byte number;
         boolean flag=true;
@@ -21,28 +21,30 @@ public class Management {
             number=scanner.nextByte();
             switch (number){
                 case 1:
-                    typeOfMilk.Display();
+                    productManagement.display();
                     break;
                 case 2:
-                    typeOfMilk.Add();
-                    typeOfMilk.Display();;
+                    productManagement.add();
+                    productManagement.display();
                     break;
                 case 3:
-                    typeOfMilk.Update();
-                    typeOfMilk.Display();
+                    productManagement.update();
+                    productManagement.display();
                     break;
                 case 4:
-                    typeOfMilk.Delete();
-                    typeOfMilk.Display();
+                    productManagement.delete();
+                    productManagement.display();
                     break;
                 case 5:
-                    typeOfMilk.Search();
+                    productManagement.search();
+                    break;
                 case 6:
                     System.out.println("thoát chương trình");
                     System.exit(0);
                     break;
                 default:
-                    System.out.println("hãy chọn từ 1 đến 5");
+
+                    System.out.println("hãy chọn từ 1 đến 6");
             }
 
         }while (flag);

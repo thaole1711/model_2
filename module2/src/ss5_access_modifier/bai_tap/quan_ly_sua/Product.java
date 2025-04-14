@@ -1,4 +1,4 @@
-package ss5_access_modifier.bai_tap.QuanLySua;
+package ss5_access_modifier.bai_tap.quan_ly_sua;
 
 public class Product {
     private int id;

@@ -1,4 +1,4 @@
-package ss5_access_modifier.bai_tap.Student;
+package ss5_access_modifier.bai_tap.student;
 
 public class TestStudent {
     public static void main(String[] args) {

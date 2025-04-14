@@ -8,7 +8,9 @@ public class Display {
     }
     public static void Menu(){
         Scanner scanner = new Scanner(System.in);
+        HocSinh hocSinh=new HocSinh();
         byte number ;
+        boolean flag=true;
         do {
 
             System.out.println("menu");
@@ -18,17 +20,19 @@ public class Display {
             System.out.println("4. update");
             System.out.println("5. search");
             System.out.println("6.exit");
-            System.out.println("nhập số bạn chọn");
+            System.out.println("nhập số bạn chọn :");
             number = scanner.nextByte();
             switch (number) {
                 case 1:
-                    System.out.println("display");
+                   hocSinh.display(); ;
                     break;
                 case 2:
-                    System.out.println("Add");
+                    hocSinh.add();
+                    hocSinh.display();
                     break;
                 case 3:
-                    System.out.println("Delete");
+                    hocSinh.Delete();
+                    hocSinh.display();
                     break;
                 case 4:
                     System.out.println("Update");
@@ -38,9 +42,11 @@ public class Display {
                     break;
                 case 6:
                     System.out.println("exit");
+                    System.exit(0);
                     break;
-
+                default:
+                    System.out.println("bạn hãy chọn từ 1 đến 6");
             }
-        }while (number!=6);
+        }while (flag);
     }
 }

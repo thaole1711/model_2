@@ -1,4 +1,4 @@
-package ss5_access_modifier.bai_tap.Access_modifier;
+package ss5_access_modifier.bai_tap.access_modifier;
 
 public class TestCar {
     public static void main(String[] args) {
