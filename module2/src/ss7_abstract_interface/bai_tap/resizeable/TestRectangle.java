@@ -1,4 +1,4 @@
-package ss7_abstract_interface.resizeable;
+package ss7_abstract_interface.bai_tap.resizeable;
 
 public class TestRectangle {
     public static void main(String[] args) {

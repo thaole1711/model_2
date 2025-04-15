@@ -1,7 +1,7 @@
 package ss7_abstract_interface.thuc_hanh.comparable;
 
 
-import ss7_abstract_interface.resizeable.Resizeable;
+import ss7_abstract_interface.bai_tap.resizeable.Resizeable;
 
 public class Circle extends Shape implements Resizeable {
         private double radius = 1.0;

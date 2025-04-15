@@ -1,4 +1,4 @@
-package ss7_abstract_interface.resizeable;
+package ss7_abstract_interface.bai_tap.resizeable;
 
 public class Rectangle extends Shape implements Resizeable{
     private double width = 1.0;
