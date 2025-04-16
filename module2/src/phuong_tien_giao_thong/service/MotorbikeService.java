@@ -2,10 +2,10 @@ package phuong_tien_giao_thong.service;
 
 import phuong_tien_giao_thong.entity.Motorbike;
 import phuong_tien_giao_thong.repository.IMotorbikeRepository;
-import phuong_tien_giao_thong.repository.MotorbikeRepossitory;
+import phuong_tien_giao_thong.repository.MotorbikeRepository;
 
-public class MotobikeService implements IMotobikeService{
-IMotorbikeRepository motorbikeRepository= new MotorbikeRepossitory();
+public class MotorbikeService implements IMotobikeService{
+  private IMotorbikeRepository motorbikeRepository= new MotorbikeRepository();
     @Override
     public Motorbike[] findAll() {
         return motorbikeRepository.findAll();

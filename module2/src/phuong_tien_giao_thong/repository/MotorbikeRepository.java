@@ -1,9 +1,8 @@
 package phuong_tien_giao_thong.repository;
 
 import phuong_tien_giao_thong.entity.Motorbike;
-import phuong_tien_giao_thong.entity.Truck;
 
-public class MotorbikeRepossitory implements IMotorbikeRepository {
+public class MotorbikeRepository implements IMotorbikeRepository {
    private static Motorbike[] motorbikes = new Motorbike[10];
     static {
         motorbikes[0]=new Motorbike("43-K1-678.56","huynhdai",2020,"Nguyen Van A",100);

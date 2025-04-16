@@ -7,7 +7,7 @@ import phuong_tien_giao_thong.repository.ITruckRepository;
 import phuong_tien_giao_thong.repository.TruckRepository;
 
 public class TruckService implements ITruckSevervice {
-    private TruckRepository truckRepository= new TruckRepository();
+    private ITruckRepository truckRepository= new TruckRepository();
     @Override
     public Truck[] findAll() {
         return  truckRepository.findAll();

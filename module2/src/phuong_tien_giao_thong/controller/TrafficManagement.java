@@ -5,7 +5,7 @@ public class TrafficManagement {
 
     public static void displayMenu() {
         Scanner scanner= new Scanner(System.in);
-        TypeOfVehicleController view = new TypeOfVehicleController();
+        TypeOfVehicleController typeOfVehicleController = new TypeOfVehicleController();
         boolean flag=true;
         do {
         System.out.println("----CHUONG TRINH QUAN LY PHUONG TIEN GIAO THONG---"+
@@ -18,13 +18,13 @@ public class TrafficManagement {
         int number= scanner.nextInt();
             switch (number){
                 case 1:
-                  view.add();
+                  typeOfVehicleController.add();
                     break;
                 case 2:
-                    view.display();
+                    typeOfVehicleController.display();
                     break;
                 case 3:
-                   view.delete();
+                   typeOfVehicleController.delete();
                     break;
                 case 4:
                     System.out.println("thoat chuong trinh");

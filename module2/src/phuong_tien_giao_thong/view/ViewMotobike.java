@@ -1,16 +1,14 @@
 package phuong_tien_giao_thong.view;
 
-import phuong_tien_giao_thong.entity.Car;
 import phuong_tien_giao_thong.entity.Motorbike;
-import phuong_tien_giao_thong.repository.CarRepository;
-import phuong_tien_giao_thong.repository.MotorbikeRepossitory;
+import phuong_tien_giao_thong.repository.MotorbikeRepository;
 
 import java.util.Scanner;
 
 public class ViewMotobike {
     public static Scanner scanner =new Scanner(System.in);
     public void motobikeView(){
-        MotorbikeRepossitory motorbikeRepos= new MotorbikeRepossitory();
+        MotorbikeRepository motorbikeRepos= new MotorbikeRepository();
         Motorbike[] motorbike=motorbikeRepos.findAll();
         for (int i = 0; i < motorbike.length; i++) {
             System.out.println(motorbike[i]);
@@ -36,7 +34,7 @@ public class ViewMotobike {
     }
 
     public void delete(String numberPlate) {
-        MotorbikeRepossitory motorbikeRepos = new MotorbikeRepossitory();
+        MotorbikeRepository motorbikeRepos = new MotorbikeRepository();
         motorbikeRepos.delete(numberPlate);
     }
 }

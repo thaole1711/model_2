@@ -4,7 +4,7 @@ import phuong_tien_giao_thong.entity.Car;
 import phuong_tien_giao_thong.entity.Motorbike;
 import phuong_tien_giao_thong.entity.Truck;
 import phuong_tien_giao_thong.service.CarService;
-import phuong_tien_giao_thong.service.MotobikeService;
+import phuong_tien_giao_thong.service.MotorbikeService;
 import phuong_tien_giao_thong.service.TruckService;
 import phuong_tien_giao_thong.view.ViewCar;
 import phuong_tien_giao_thong.view.ViewMotobike;
@@ -54,7 +54,7 @@ public class TypeOfVehicleController {
         ViewCar viewCar = new ViewCar();
         CarService carService = new CarService();
         ViewMotobike viewMoto = new ViewMotobike();
-        MotobikeService motobikeService = new MotobikeService();
+        MotorbikeService motobikeService = new MotorbikeService();
         ViewTruck viewTruck= new ViewTruck();
         TruckService truckService= new TruckService();
         boolean flag = true;
@@ -93,7 +93,7 @@ public class TypeOfVehicleController {
 
     public void delete() {
         CarService carService = new CarService();
-        MotobikeService motobikeService = new MotobikeService();
+        MotorbikeService motobikeService = new MotorbikeService();
         TruckService truckService= new TruckService();
         boolean flag = true;
         do {
