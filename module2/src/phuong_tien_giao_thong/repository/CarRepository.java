@@ -26,15 +26,19 @@ public class CarRepository implements ICarRepository{
     }
 
     @Override
-    public void display(Car car) {
-
+    public void delete(String numberPlate) {
+        for (int i = 0; i < cars.length; i++) {
+            if (cars[i] != null && cars[i].getNumberPlate().equals(numberPlate)) {
+                for (int j = i; j < cars.length - 1; j++) {
+                    cars[j] = cars[j + 1];
+                }
+                cars[cars.length - 1] = null;
+                System.out.println("Phương tiện với biển kiểm soát " + numberPlate + " đã xoá thành công.");
+                return;
+            }
+        }
+        System.out.println("Phương tiện với biển kiểm soát " + numberPlate + " không tìm thấy.");
     }
-
-    @Override
-    public void delete(Car car) {
-
-    }
-
 }
 
 

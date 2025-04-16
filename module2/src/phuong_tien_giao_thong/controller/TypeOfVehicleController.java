@@ -91,4 +91,42 @@ public class TypeOfVehicleController {
         } while (flag);
     }
 
+    public void delete() {
+        CarService carService = new CarService();
+        MotobikeService motobikeService = new MotobikeService();
+        TruckService truckService= new TruckService();
+        boolean flag = true;
+        do {
+            System.out.println("ban muon xoa xe:" +
+                    "\n 1.oto" +
+                    "\n 2.tai" +
+                    "\n 3.may" +
+                    "\n 4.thoat");
+            System.out.println("nhap so ban chon :");
+            int number = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("Nhap bien so xe ban muon xoa :");
+            String numberPlate = scanner.nextLine();
+
+            switch (number) {
+                case 1:
+                    carService.delete(numberPlate);
+                    break;
+                case 2:
+                    truckService.delete(numberPlate);
+                    break;
+                case 3:
+                    motobikeService.delete(numberPlate);
+                    break;
+                case 4:
+                    System.out.println("thoat chuong trinh");
+                    System.exit(0);
+                    break;
+                default:
+                    flag = false;
+                    System.out.println("ban hay chon tu 1 den 4");
+            }
+        } while (flag);
+    }
+
 }

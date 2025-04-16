@@ -5,9 +5,5 @@ import phuong_tien_giao_thong.entity.Car;
 public interface ICarRepository {
     Car[] findAll();
     void add(Car car);
-    void display(Car car);
-    void delete(Car car);
-
-
-
+  void delete(String bienSoXe);
 }

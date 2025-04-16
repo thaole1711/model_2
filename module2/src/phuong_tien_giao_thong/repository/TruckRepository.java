@@ -28,14 +28,18 @@ static {
         }
 
     }
-
     @Override
-    public void display(Truck truck) {
-
-    }
-
-    @Override
-    public void delete(Truck truck) {
-
+    public void delete(String numberPlate) {
+        for (int i = 0; i < trucks.length; i++) {
+            if (trucks[i] != null && trucks[i].getNumberPlate().equals(numberPlate)) {
+                for (int j = i; j < trucks.length - 1; j++) {
+                    trucks[j] = trucks[j + 1];
+                }
+                trucks[trucks.length - 1] = null;
+                System.out.println("Phương tiện với biển kiểm soát " + numberPlate + " đã xoá thành công.");
+                return;
+            }
+        }
+        System.out.println("Phương tiện với biển kiểm soát " + numberPlate + " không tìm thấy.");
     }
 }

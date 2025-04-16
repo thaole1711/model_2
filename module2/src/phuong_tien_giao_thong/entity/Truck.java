@@ -1,6 +1,6 @@
 package phuong_tien_giao_thong.entity;
 
-public class Truck extends TrafficManagement{
+public class Truck extends Traffic {
     private double payload;
 
     public Truck(String numberPlate, String brandName, int manufactureYear, String userName, double payload) {

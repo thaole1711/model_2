@@ -1,6 +1,7 @@
 package phuong_tien_giao_thong.view;
 
 import phuong_tien_giao_thong.entity.Truck;
+import phuong_tien_giao_thong.repository.MotorbikeRepossitory;
 import phuong_tien_giao_thong.repository.TruckRepository;
 
 import java.util.Scanner;
@@ -33,7 +34,11 @@ public class ViewTruck {
         double newPayload = scanner.nextInt();
         Truck truck = new Truck(plateNew, brandNew, yearNew, nameNew, newPayload);
         return truck;
+    }
 
+    public void delete(String numberPlate) {
+        TruckRepository truckRepo = new TruckRepository();
+        truckRepo.delete(numberPlate);
     }
 
 }

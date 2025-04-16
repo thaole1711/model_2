@@ -16,7 +16,6 @@ public class TrafficManagement {
                 "\n 4. thoat");
             System.out.println("nhap so ban chon:");
         int number= scanner.nextInt();
-
             switch (number){
                 case 1:
                   view.add();
@@ -25,7 +24,7 @@ public class TrafficManagement {
                     view.display();
                     break;
                 case 3:
-                    System.out.println("xoa");
+                   view.delete();
                     break;
                 case 4:
                     System.out.println("thoat chuong trinh");

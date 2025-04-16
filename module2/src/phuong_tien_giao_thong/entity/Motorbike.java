@@ -1,6 +1,6 @@
 package phuong_tien_giao_thong.entity;
 
-public class Motorbike extends TrafficManagement{
+public class Motorbike extends Traffic {
 private  double power;
 
     public Motorbike(String numberPlate, String brandName, int manufactureYear, String userName, double power) {

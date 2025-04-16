@@ -32,6 +32,9 @@ public class ViewCar {
         int newSeatCapacity=scanner.nextInt();
         Car car = new Car(plateNew, brandNew, yearNew, nameNew, typeNew, newSeatCapacity);
         return car;
-
 }
+    public void delete(String numberPlate) {
+        CarRepository carRepo = new CarRepository();
+         carRepo.delete(numberPlate);
+    }
 }

@@ -28,13 +28,18 @@ public class MotorbikeRepossitory implements IMotorbikeRepository {
     }
 
     @Override
-    public void delete(Motorbike motorbike) {
-
-    }
-
-    @Override
-    public void display(Motorbike motorbike) {
-
+    public void delete(String numberPlate) {
+        for (int i = 0; i < motorbikes.length; i++) {
+            if (motorbikes[i] != null && motorbikes[i].getNumberPlate().equals(numberPlate)) {
+                for (int j = i; j < motorbikes.length - 1; j++) {
+                    motorbikes[j] = motorbikes[j + 1];
+                }
+                motorbikes[motorbikes.length - 1] = null;
+                System.out.println("Phương tiện với biển kiểm soát " + numberPlate + " đã xoá thành công.");
+                return;
+            }
+        }
+        System.out.println("Phương tiện với biển kiểm soát " + numberPlate + " không tìm thấy.");
     }
 }
 

@@ -1,10 +1,10 @@
 package phuong_tien_giao_thong.entity;
 
-public abstract class TrafficManagement {
+public abstract class Traffic {
     protected  String numberPlate,brandName,userName;
     protected int manufactureYear;
 
-    public TrafficManagement( String numberPlate,String brandName,int manufactureYear, String userName ) {
+    public Traffic(String numberPlate, String brandName, int manufactureYear, String userName ) {
         this.brandName = brandName;
         this.manufactureYear = manufactureYear;
         this.numberPlate = numberPlate;

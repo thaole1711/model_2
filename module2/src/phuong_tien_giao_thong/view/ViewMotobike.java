@@ -2,6 +2,7 @@ package phuong_tien_giao_thong.view;
 
 import phuong_tien_giao_thong.entity.Car;
 import phuong_tien_giao_thong.entity.Motorbike;
+import phuong_tien_giao_thong.repository.CarRepository;
 import phuong_tien_giao_thong.repository.MotorbikeRepossitory;
 
 import java.util.Scanner;
@@ -34,4 +35,8 @@ public class ViewMotobike {
         return motorbike;
     }
 
+    public void delete(String numberPlate) {
+        MotorbikeRepossitory motorbikeRepos = new MotorbikeRepossitory();
+        motorbikeRepos.delete(numberPlate);
+    }
 }

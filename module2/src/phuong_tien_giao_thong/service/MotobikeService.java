@@ -23,7 +23,7 @@ IMotorbikeRepository motorbikeRepository= new MotorbikeRepossitory();
     }
 
     @Override
-    public void delete(Motorbike motorbike) {
-
+    public void delete(String numberPlate) {
+        motorbikeRepository.delete(numberPlate);
     }
 }

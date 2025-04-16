@@ -6,6 +6,6 @@ public interface IMotobikeService {
     Motorbike[] findAll();
     void add(Motorbike motorbike);
     void display(Motorbike motorbike);
-    void delete(Motorbike motorbike);
+    void delete(String numberPlate);
 
 }

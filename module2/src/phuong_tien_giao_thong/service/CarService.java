@@ -22,7 +22,7 @@ private ICarRepository carRepositoryarRepository= new CarRepository();
     }
 
     @Override
-    public void delete(Car car) {
-
+    public void delete(String  numberPlate) {
+        carRepositoryarRepository.delete(numberPlate);
     }
 }

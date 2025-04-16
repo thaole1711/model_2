@@ -6,5 +6,5 @@ public interface ITruckSevervice {
     Truck[] findAll();
     void add(Truck truck);
     void display(Truck truck);
-    void delete(Truck truck);
+    void delete(String numberPlate);
 }

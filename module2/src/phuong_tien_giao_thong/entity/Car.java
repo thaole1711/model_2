@@ -1,6 +1,6 @@
 package phuong_tien_giao_thong.entity;
 
-public class Car extends TrafficManagement{
+public class Car extends Traffic {
     private int seatCapacity;
     private String type;
 
