@@ -1,0 +1,41 @@
+package phuong_tien_giao_thong.controller;
+
+import java.util.Scanner;
+public class TrafficManagement {
+
+    public static void displayMenu() {
+        Scanner scanner= new Scanner(System.in);
+        TypeOfVehicleController view = new TypeOfVehicleController();
+        boolean flag=true;
+        do {
+        System.out.println("----CHUONG TRINH QUAN LY PHUONG TIEN GIAO THONG---"+
+                "\n chon chuc nang:"+
+                "\n 1. them moi chuc nang" +
+                "\n 2. hien thi chuc nang"+
+                "\n 3. xoa phuong tien"+
+                "\n 4. thoat");
+            System.out.println("nhap so ban chon:");
+        int number= scanner.nextInt();
+
+            switch (number){
+                case 1:
+                  view.add();
+                    break;
+                case 2:
+                    view.display();
+                    break;
+                case 3:
+                    System.out.println("xoa");
+                    break;
+                case 4:
+                    System.out.println("thoat chuong trinh");
+                    System.exit(0);
+                    break;
+                default:
+                    flag=false;
+                    System.out.println("ban hay chon tu 1 den 4");
+            }
+        }while (flag);
+
+    }
+}

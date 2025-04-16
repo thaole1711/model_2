@@ -1,12 +1,16 @@
-package thuc_hanh_demo.sinh_vien;
+package demo.entity;
 
-public class HocSinh implements Comparable<HocSinh>{
+public abstract class Person {
     private int id;
     private String name;
-public HocSinh(int id, String name){
-    this.id=id;
-    this.name=name;
-}
+
+    public Person() {
+    }
+
+    public Person(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
     public int getId() {
         return id;
@@ -26,14 +30,9 @@ public HocSinh(int id, String name){
 
     @Override
     public String toString() {
-        return "HocSinh{" +
+        return
                 "id=" + id +
-                ", name='" + name + '\'' +
-                '}';
-    }
-
-    @Override
-    public int compareTo(HocSinh o) {
-      return this.id-o.id;
+                ", name='" + name + '\''
+              ;
     }
 }
