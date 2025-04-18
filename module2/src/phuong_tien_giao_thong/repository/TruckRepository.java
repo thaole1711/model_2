@@ -3,43 +3,46 @@ package phuong_tien_giao_thong.repository;
 import phuong_tien_giao_thong.entity.Car;
 import phuong_tien_giao_thong.entity.Truck;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TruckRepository implements ITruckRepository{
-public static Truck[] trucks=new Truck[5];
+public static List<Truck> listTruck=new ArrayList<>();
 static {
-    trucks[0]= new Truck("43C-012.34","Huyndai",2019,"Nguyễn Văn A",3);
-    trucks[1]= new Truck("43C-47.678","Hino",2020,"nguyen van N",6);
-    trucks[2]= new Truck("43C-45.235","Huyndai",2021,"Nguyễn Văn Tuong",9);
+    listTruck.add( new Truck("43C-012.34","Huyndai",2019,"Nguyễn Văn A",3));
+    listTruck.add( new Truck("43C-47.678","Hino",2020,"nguyen van N",6));
+    listTruck.add( new Truck("43C-45.235","Huyndai",2021,"Nguyễn Văn Tuong",9));
 }
 
     @Override
-    public Truck[] findAll() {
-        return trucks;
+    public List<Truck> findAll() {
+        return listTruck ;
     }
 
     @Override
     public void add(Truck truck) {
-        for (int i = 0; i < trucks.length; i++) {
-            if(trucks[i]==null){
-                trucks[i]=truck;
-                break;
-
-
-            }
-        }
+        listTruck.add(truck);
 
     }
     @Override
     public void delete(String numberPlate) {
-        for (int i = 0; i < trucks.length; i++) {
-            if (trucks[i] != null && trucks[i].getNumberPlate().equals(numberPlate)) {
-                for (int j = i; j < trucks.length - 1; j++) {
-                    trucks[j] = trucks[j + 1];
-                }
-                trucks[trucks.length - 1] = null;
-                System.out.println("Phương tiện với biển kiểm soát " + numberPlate + " đã xoá thành công.");
-                return;
-            }
+      Truck trucks= findTruckByNumberPlate(numberPlate);
+        if(trucks!=null){
+            listTruck.remove(trucks);
+            System.out.println("bạn đã xóa thành công");
+        }else {
+            System.out.println("bạn không tìm thấy biển số xe");
         }
-        System.out.println("Phương tiện với biển kiểm soát " + numberPlate + " không tìm thấy.");
+
+
+
+    }
+    public Truck findTruckByNumberPlate(String numberPlate){
+        for (int i = 0; i < listTruck.size(); i++) {
+           if(listTruck.get(i).getNumberPlate().equals(numberPlate)) {
+               return listTruck.get(i);
+           }
+        }
+        return null;
     }
 }

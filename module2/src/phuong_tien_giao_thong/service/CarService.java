@@ -4,10 +4,13 @@ import phuong_tien_giao_thong.entity.Car;
 import phuong_tien_giao_thong.repository.CarRepository;
 import phuong_tien_giao_thong.repository.ICarRepository;
 
+import java.util.List;
+
+
 public class CarService implements ICarService{
 private ICarRepository carRepositoryarRepository= new CarRepository();
     @Override
-    public Car[] findAll() {
+    public List<Car> findAll() {
         return carRepositoryarRepository.findAll();
     }
 

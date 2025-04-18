@@ -3,18 +3,17 @@ package phuong_tien_giao_thong.view;
 import phuong_tien_giao_thong.entity.Car;
 import phuong_tien_giao_thong.repository.CarRepository;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class ViewCar {
     public static Scanner scanner=new Scanner(System.in);
     public void carView() {
         CarRepository carRepo = new CarRepository();
-        Car[] cars = carRepo.findAll();
-        for (int i = 0; i < cars.length; i++) {
-            System.out.println(cars[i]);
-            if (cars[i] == null) {
-                break;
-            }
+        List<Car> cars = carRepo.findAll();
+        for (Car car : cars) {
+            System.out.println(car);
+
         }
     }
     public static Car addCar(){

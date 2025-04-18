@@ -6,10 +6,12 @@ import phuong_tien_giao_thong.repository.ICarRepository;
 import phuong_tien_giao_thong.repository.ITruckRepository;
 import phuong_tien_giao_thong.repository.TruckRepository;
 
+import java.util.List;
+
 public class TruckService implements ITruckSevervice {
     private ITruckRepository truckRepository= new TruckRepository();
     @Override
-    public Truck[] findAll() {
+    public List<Truck> findAll() {
         return  truckRepository.findAll();
     }
 
@@ -18,12 +20,6 @@ public class TruckService implements ITruckSevervice {
         truckRepository.add(truck);
 
     }
-
-    @Override
-    public void display(Truck truck) {
-
-    }
-
     @Override
     public void delete(String numberPlate) {
         truckRepository.delete(numberPlate);

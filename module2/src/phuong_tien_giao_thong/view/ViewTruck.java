@@ -3,6 +3,7 @@ package phuong_tien_giao_thong.view;
 import phuong_tien_giao_thong.entity.Truck;
 import phuong_tien_giao_thong.repository.TruckRepository;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class ViewTruck {
@@ -10,15 +11,11 @@ public class ViewTruck {
 
     public void truckView() {
         TruckRepository truckRepo = new TruckRepository();
-        Truck[] trucks = truckRepo.findAll();
-        for (int i = 0; i < trucks.length; i++) {
-            System.out.println(trucks[i]);
-            if (trucks[i] == null) {
-                break;
-            }
+       List<Truck> trucks = truckRepo.findAll();
+        for (Truck truck: trucks) {
+            System.out.println(truck);
 
         }
-
     }
     public static Truck addTruck() {
         System.out.println("nhap bien kiem soat xe oto:");
