@@ -7,9 +7,9 @@ import java.util.List;
 
 public class Array {
     public static void main(String[] args) {
-//        ArrayList<Integer> lst1=new ArrayList<>();
-//       ArrayList<Integer> lst= new ArrayList<>(List.of(1,7,3,4,5));
-//       ArrayList<Integer>lst2= new ArrayList<>(5);
+//        ArrayList<IntegerArray> lst1=new ArrayList<>();
+//       ArrayList<IntegerArray> lst= new ArrayList<>(List.of(1,7,3,4,5));
+//       ArrayList<IntegerArray>lst2= new ArrayList<>(5);
 //      Collections.sort(lst);
 //     System.out.println(" sau sắp xếp"+lst);
 //
