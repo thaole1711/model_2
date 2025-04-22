@@ -1,0 +1,12 @@
+package ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.common;
+
+import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.entity.Phone;
+
+import java.util.Comparator;
+
+public class ComparatorByIdDecrease implements Comparator<Phone> {
+    @Override
+    public int compare(Phone o1, Phone o2) {
+        return o2.getId()- o1.getId();
+    }
+}
