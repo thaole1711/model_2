@@ -1,7 +1,7 @@
 package ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.repository;
 
-import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.common.ComparatorByIdDecrease;
-import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.common.ComparatorByIdIncrease;
+import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.common.ComparatorByPriceDecrease;
+import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.common.ComparatorByPriceIncrease;
 import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.common.FindId;
 import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.entity.Phone;
 
@@ -75,12 +75,12 @@ static {
 
     @Override
     public void increaseSort() {
-        Collections.sort(phoneList, new ComparatorByIdIncrease());
+        Collections.sort(phoneList, new ComparatorByPriceIncrease());
         System.out.print(phoneList);
     }
 
     public void decreaseSort() {
-        Collections.sort(phoneList, new ComparatorByIdDecrease());
+        Collections.sort(phoneList, new ComparatorByPriceDecrease());
         System.out.println(phoneList);
     }
 
