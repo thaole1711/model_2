@@ -1,5 +1,7 @@
 package thuc_hanh_demo.sinh_vien;
 
+import java.util.Objects;
+
 public class HocSinh implements Comparable<HocSinh>{
     private int id;
     private String name;
@@ -32,8 +34,20 @@ public HocSinh(int id, String name){
                 '}';
     }
 
+//    @Override
+//    public boolean equals(Object object) {
+//        HocSinh hocSinh=(HocSinh) object;
+//        return this.id==hocSinh.id;
+//    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
     @Override
     public int compareTo(HocSinh o) {
       return this.id-o.id;
+
     }
 }

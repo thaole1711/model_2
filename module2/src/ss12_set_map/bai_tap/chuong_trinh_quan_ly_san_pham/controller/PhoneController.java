@@ -34,6 +34,7 @@ public class PhoneController {
                     break;
                 case 2:
                     int  id= phone.findId();
+                    phoneSevice.findId(id);
                     if(!FindId.flag){
                         System.out.println("không tim thấy");
                     }else {
