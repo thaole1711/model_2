@@ -4,6 +4,8 @@ import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.entity.Phone;
 import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.repository.IPhoneRepository;
 import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.repository.PhoneRepository;
 
+import java.util.List;
+
 public class PhoneSevice implements IPhoneSevice {
     IPhoneRepository phoneRepository = new PhoneRepository();
 
@@ -21,13 +23,22 @@ public class PhoneSevice implements IPhoneSevice {
     }
 
     @Override
-    public void delete(int id) {
-        phoneRepository.delete(id);
+    public boolean delete(int id) {
+        List<Phone> phoneList=findAll();
+        for (int i = 0; i <phoneList.size() ; i++) {
+            if(id== phoneList.get(i).getId()){
+                phoneRepository.delete(id);
+                return true;
+            }
+        }
+        return false;
+//
     }
 
     @Override
-    public void display() {
-        phoneRepository.display();
+    public  List<Phone> findAll()  {
+        return   phoneRepository.findAll();
+
     }
 
     @Override

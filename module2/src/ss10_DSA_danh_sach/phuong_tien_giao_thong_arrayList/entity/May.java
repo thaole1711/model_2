@@ -21,4 +21,7 @@ public class May extends PhuongTien {
         return super.toString() +
                 ",congSuat=" + congSuat ;
     }
+    public  String getInfoToFile(){
+        return super.bienKiemSoat+","+super.tenHang+","+super.namSanXuat+","+super.chuSoHuu+","+this.congSuat;
+    }
 }

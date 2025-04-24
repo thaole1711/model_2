@@ -1,15 +1,18 @@
 package ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.controller;
 
+import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.common.ComparatorByPriceIncrease;
 import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.common.FindId;
 import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.entity.Phone;
+import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.repository.PhoneRepository;
 import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.sevice.PhoneSevice;
 import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.view.PhoneView;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class PhoneController {
     public static Scanner scanner = new Scanner(System.in);
-    PhoneView phone = new PhoneView();
+    PhoneView phoneView = new PhoneView();
     PhoneSevice phoneSevice = new PhoneSevice();
 
     public void menuPhone() {
@@ -28,32 +31,40 @@ public class PhoneController {
             number = Integer.parseInt(scanner.nextLine());
             switch (number) {
                 case 1:
-                    Phone phoneNew = phone.add();
+                    Phone phoneNew = phoneView.add();
                     phoneSevice.add(phoneNew);
                     System.out.println(phoneNew);
                     break;
                 case 2:
-                    int  id= phone.findId();
+                    int id = phoneView.findId();
                     phoneSevice.findId(id);
-                    if(!FindId.flag){
+                    if (!FindId.flag) {
                         System.out.println("không tim thấy");
-                    }else {
-                        Phone phone1 = phone.Update(id);
+                    } else {
+                        Phone phone1 = phoneView.update(id);
                         phoneSevice.update(phone1);
                         System.out.println("Cap nhat thanh cong");
-                        FindId.flag= false;
+                        FindId.flag = false;
                     }
 
                     break;
                 case 3:
-                    int idDelete = phone.delete();
-                    phoneSevice.delete(idDelete);
+                    int idDelete = phoneView.delete();
+                    boolean check = phoneSevice.delete(idDelete);
+                    if (check) {
+                        System.out.println("xóa thành công");
+                    } else {
+                        System.out.println("không tim thay");
+                    }
                     break;
                 case 4:
-                    phoneSevice.display();
+                    List<Phone> phones = phoneSevice.findAll();
+                    for (Phone phone : phones) {
+                        System.out.println(phone);
+                    }
                     break;
                 case 5:
-                    String nameSeach = phone.seach();
+                    String nameSeach = phoneView.seach();
                     phoneSevice.seach(nameSeach);
                     break;
                 case 6:
@@ -74,7 +85,10 @@ public class PhoneController {
                 "\n bạn chọn số:");
         int number = Integer.parseInt(scanner.nextLine());
         if (number == 1) {
-            phoneSevice.increaseSort();
+            List<Phone> phones = phoneSevice.findAll();
+            phones.sort(new ComparatorByPriceIncrease());
+            PhoneView.display(phones);
+
         } else if (number == 2) {
             phoneSevice.decreaseSort();
         } else {

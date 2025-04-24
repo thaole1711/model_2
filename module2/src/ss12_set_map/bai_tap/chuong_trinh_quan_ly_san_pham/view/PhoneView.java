@@ -2,11 +2,18 @@ package ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.view;
 
 import ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.entity.Phone;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class PhoneView {
     Phone phone = new Phone();
     private static Scanner scanner = new Scanner(System.in);
+
+    public static void display(List<Phone> phone) {
+        for (int i = 0; i < phone.size(); i++) {
+            System.out.println(phone.get(i));
+        }
+    }
 
     public Phone add() {
         System.out.println("nhập id điện thoại");
@@ -14,7 +21,7 @@ public class PhoneView {
         System.out.println("nhập tên điện thoại");
         String nameAdd = scanner.nextLine();
         System.out.println("nhập giá điện thoại");
-        double priceAdd = Double.parseDouble(scanner.nextLine());
+        long priceAdd = Long.parseLong(scanner.nextLine());
         Phone phone = new Phone(idAdd, nameAdd, priceAdd);
         return phone;
     }
@@ -31,12 +38,12 @@ public class PhoneView {
         return nameSeach;
     }
 
-    public Phone Update(int id) {
+    public Phone update(int id) {
         System.out.println("nhập tên thay đổi");
         String nameUpdate = scanner.nextLine();
         phone.setName(nameUpdate);
         System.out.println("nhập giá thay đổi");
-        Double priceUpdate = Double.parseDouble(scanner.nextLine());
+        Long priceUpdate = Long.parseLong(scanner.nextLine());
         phone.setPrice(priceUpdate);
         Phone phoneUpdate = new Phone(id, nameUpdate, priceUpdate);
         System.out.println(phoneUpdate);

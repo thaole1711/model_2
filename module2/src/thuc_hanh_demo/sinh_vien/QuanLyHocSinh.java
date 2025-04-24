@@ -16,8 +16,8 @@ public class QuanLyHocSinh {
 
     }
     public void display() {
-//        Arrays.sort(hocSinh);
-        Arrays.sort(hocSinh,new CompareByName());
+        Arrays.sort(hocSinh);
+//        Arrays.sort(hocSinh,new CompareByName());
         for (int i = 0; i < hocSinh.length; i++) {
             if (hocSinh[i] != null) {
                 System.out.println(hocSinh[i]);

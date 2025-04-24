@@ -9,9 +9,9 @@ public interface IPhoneSevice {
 
     void update(Phone phone);
 
-    void delete(int id);
+   boolean delete(int id);
 
-    void display();
+     List<Phone>  findAll() ;
 
     void seach(String name);
 
