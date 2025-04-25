@@ -7,5 +7,5 @@ import java.util.List;
 public interface IMotorbikeRepository {
    List <Motorbike> findAll();
     void add(Motorbike motorbike);
-    void delete(String numberPlate);
+    boolean delete(String numberPlate);
 }

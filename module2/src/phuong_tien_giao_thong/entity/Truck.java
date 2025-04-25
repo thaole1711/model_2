@@ -21,4 +21,7 @@ public class Truck extends Traffic {
         return super.toString() +
                 ",payload=" + payload;
     }
+    public String getInfoToFileTruck(){
+        return super.numberPlate+","+super.brandName+","+super.manufactureYear+","+super.userName+","+this.payload;
+    }
 }

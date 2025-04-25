@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class ViewCar {
     public static Scanner scanner=new Scanner(System.in);
-    public void carView() {
+    public void displayCar() {
         CarRepository carRepo = new CarRepository();
         List<Car> cars = carRepo.findAll();
         for (Car car : cars) {

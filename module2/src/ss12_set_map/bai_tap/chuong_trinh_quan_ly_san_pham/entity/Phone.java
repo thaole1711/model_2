@@ -1,6 +1,8 @@
 package ss12_set_map.bai_tap.chuong_trinh_quan_ly_san_pham.entity;
 
-public class Phone {
+import java.io.Serializable;
+
+public class Phone implements Serializable {
     private int id;
     private String name;
     private long price ;

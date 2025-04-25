@@ -17,11 +17,11 @@ public class ViewMotobike {
         }
     }
     public static Motorbike addMotobike() {
-        System.out.println("nhap bien kiem soat xe oto:");
+        System.out.println("nhap bien kiem soat xe máy:");
         String plateNew = scanner.nextLine();
-        System.out.println("nhap hang san xuat xe oto:");
+        System.out.println("nhap hang san xuat xe máy:");
         String brandNew = scanner.nextLine();
-        System.out.println("nhap nam san xuat oto:");
+        System.out.println("nhap nam san xuat máy:");
         int yearNew = Integer.parseInt(scanner.nextLine());
         System.out.println("ten chu so huu:");
         String nameNew = scanner.nextLine();

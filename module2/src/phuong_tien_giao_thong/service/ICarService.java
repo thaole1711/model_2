@@ -7,6 +7,6 @@ import java.util.List;
 public interface ICarService {
     List<Car> findAll();
     void add(Car car);
-    void display(Car car);
+
     void delete(String numberPlate);
 }

@@ -11,6 +11,7 @@ import java.util.*;
 
 public class PhoneRepository implements IPhoneRepository {
     public final String PHONE_FILE = "D:\\codegym\\module2\\module2\\src\\ss12_set_map\\bai_tap\\chuong_trinh_quan_ly_san_pham\\data\\phone.csv";
+    public final String PHONE_DAT = "D:\\codegym\\module2\\module2\\src\\ss12_set_map\\bai_tap\\chuong_trinh_quan_ly_san_pham\\data\\phone.dat";
 
     Scanner scanner = new Scanner(System.in);
 
@@ -19,10 +20,16 @@ public class PhoneRepository implements IPhoneRepository {
 
     @Override
     public void add(Phone phone) {
-        List<String> stringList = new ArrayList<>();
-        stringList.add(phone.getInfoToFile());
-        ReadAndWriteFile.writeFileCSV(PHONE_FILE, stringList, append);
+//        List<String> stringList = new ArrayList<>();
+//        stringList.add(phone.getInfoToFile());
+//        ReadAndWriteFile.writeFileCSV(PHONE_FILE, stringList, append);
+
+        //birary
+        List<Phone> phoneList = ReadAndWriteFile.readListObjectFromDat(PHONE_DAT);
+        phoneList.add(phone);
+        ReadAndWriteFile.writeListObjectToDat(PHONE_DAT, phoneList);
     }
+
 
     @Override
     public void findId(int id) {
@@ -45,11 +52,12 @@ public class PhoneRepository implements IPhoneRepository {
                 break;
             }
         }
-        List<String> stringList = new ArrayList<>();
-        for (Phone phone1 : phoneList) {
-            stringList.add(phone1.getInfoToFile());
-        }
-        ReadAndWriteFile.writeFileCSV(PHONE_FILE, stringList, noAppend);
+        ReadAndWriteFile.writeListObjectToDat(PHONE_DAT,phoneList);
+//        List<String> stringList = new ArrayList<>();
+//        for (Phone phone1 : phoneList) {
+//            stringList.add(phone1.getInfoToFile());
+//        }
+//        ReadAndWriteFile.writeFileCSV(PHONE_FILE, stringList, noAppend);
     }
 
     @Override
@@ -63,11 +71,14 @@ public class PhoneRepository implements IPhoneRepository {
                 break;
             }
         }
-        List<String> stringList = new ArrayList<>();
-        for (Phone phone : phones) {
-            stringList.add(phone.getInfoToFile());
+        if (check) {
+//            List<String> stringList = new ArrayList<>();
+//            for (Phone phone : phones) {
+//                stringList.add(phone.getInfoToFile());
+//            }
+//            ReadAndWriteFile.writeFileCSV(PHONE_FILE, stringList, noAppend);
+            ReadAndWriteFile.writeListObjectToDat(PHONE_DAT, phones);
         }
-        ReadAndWriteFile.writeFileCSV(PHONE_FILE, stringList, noAppend);
         return check;
 
 //        for (int i = 0; i < phoneList.size(); i++) {
@@ -85,14 +96,16 @@ public class PhoneRepository implements IPhoneRepository {
     @Override
     public List<Phone> findAll() {
         List<Phone> phoneList = new ArrayList<>();
-        List<String> stringList = ReadAndWriteFile.readFileCSV(PHONE_FILE);
-        String[] array;
-        for (int i = 0; i < stringList.size(); i++) {
-            array = stringList.get(i).split(",");
-            Phone phone = new Phone(Integer.parseInt(array[0]), array[1], Long.parseLong(array[2]));
-            phoneList.add(phone);
-        }
+        phoneList = ReadAndWriteFile.readListObjectFromDat(PHONE_DAT);
+//        List<String> stringList = ReadAndWriteFile.readFileCSV(PHONE_FILE);
+//        String[] array;
+//        for (int i = 0; i < stringList.size(); i++) {
+//            array = stringList.get(i).split(",");
+//            Phone phone = new Phone(Integer.parseInt(array[0]), array[1], Long.parseLong(array[2]));
+//            phoneList.add(phone);
+//        }
         return phoneList;
+
 
     }
 

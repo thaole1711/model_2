@@ -22,4 +22,7 @@ private  double power;
                 ",power=" + power
                 ;
     }
+    public String getInfoToFileMotobike(){
+        return super.numberPlate+","+super.brandName+","+super.manufactureYear+","+super.userName+","+this.power;
+    }
 }

@@ -7,5 +7,5 @@ import java.util.List;
 public interface ICarRepository {
     List<Car> findAll();
     void add(Car car);
-  void delete(String bienSoXe);
+  boolean delete(String bienSoXe);
 }

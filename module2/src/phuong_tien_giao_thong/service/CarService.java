@@ -19,10 +19,7 @@ private ICarRepository carRepositoryarRepository= new CarRepository();
      carRepositoryarRepository.add(car);
     }
 
-    @Override
-    public void display(Car car) {
 
-    }
 
     @Override
     public void delete(String  numberPlate) {

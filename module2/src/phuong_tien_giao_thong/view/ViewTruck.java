@@ -18,11 +18,11 @@ public class ViewTruck {
         }
     }
     public static Truck addTruck() {
-        System.out.println("nhap bien kiem soat xe oto:");
+        System.out.println("nhap bien kiem soat xe tai:");
         String plateNew = scanner.nextLine();
-        System.out.println("nhap hang san xuat xe oto:");
+        System.out.println("nhap hang san xuat xe tai:");
         String brandNew = scanner.nextLine();
-        System.out.println("nhap nam san xuat oto:");
+        System.out.println("nhap nam san xuat tai:");
         int yearNew = Integer.parseInt(scanner.nextLine());
         System.out.println("ten chu so huu:");
         String nameNew = scanner.nextLine();

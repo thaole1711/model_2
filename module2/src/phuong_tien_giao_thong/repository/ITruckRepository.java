@@ -7,5 +7,5 @@ import java.util.List;
 public interface ITruckRepository {
    List<Truck> findAll();
     void add(Truck truck);
-    void delete(String trucks);
+    boolean delete(String trucks);
 }

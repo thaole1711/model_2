@@ -29,7 +29,10 @@ public class Car extends Traffic {
     @Override
     public String toString() {
         return super.toString() +
-                "seatCapacity=" + seatCapacity +
-                ", type='" + type + '\'';
+                ",seatCapacity=" + seatCapacity +
+                ", type=" + type + '\n';
+    }
+    public String getInfoToFileCar(){
+        return super.numberPlate+","+super.brandName+","+super.manufactureYear+","+super.userName+","+this.type + "," + this.seatCapacity;
     }
 }

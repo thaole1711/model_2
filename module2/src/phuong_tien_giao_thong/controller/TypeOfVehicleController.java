@@ -31,7 +31,7 @@ public class TypeOfVehicleController {
 
             switch (number) {
                 case 1:
-                    viewCar.carView();
+                    viewCar.displayCar();
                     break;
                 case 2:
                     viewTruck.truckView();
@@ -41,10 +41,9 @@ public class TypeOfVehicleController {
                     break;
                 case 4:
                     System.out.println("thoat chuong trinh");
-                    System.exit(0);
+                    flag = false;
                     break;
                 default:
-                    flag = false;
                     System.out.println("ban hay chon tu 1 den 4");
             }
         } while (flag);
@@ -55,8 +54,8 @@ public class TypeOfVehicleController {
         CarService carService = new CarService();
         ViewMotobike viewMoto = new ViewMotobike();
         MotorbikeService motobikeService = new MotorbikeService();
-        ViewTruck viewTruck= new ViewTruck();
-        TruckService truckService= new TruckService();
+        ViewTruck viewTruck = new ViewTruck();
+        TruckService truckService = new TruckService();
         boolean flag = true;
         do {
             System.out.println("ban muon chon xe:" +
@@ -73,19 +72,19 @@ public class TypeOfVehicleController {
                     carService.add(car);
                     break;
                 case 2:
-                    Motorbike motorbike =viewMoto.addMotobike();
-                    motobikeService.add(motorbike);
+                    Truck truck = viewTruck.addTruck();
+                    truckService.add(truck);
                     break;
                 case 3:
-                    Truck truck= viewTruck.addTruck();
-                    truckService.add(truck);
+                    Motorbike motorbike = viewMoto.addMotobike();
+                    motobikeService.add(motorbike);
+
                     break;
                 case 4:
                     System.out.println("thoat chuong trinh");
-                    System.exit(0);
+                    flag = false;
                     break;
                 default:
-                    flag = false;
                     System.out.println("ban hay chon tu 1 den 4");
             }
         } while (flag);
@@ -94,8 +93,9 @@ public class TypeOfVehicleController {
     public void delete() {
         CarService carService = new CarService();
         MotorbikeService motobikeService = new MotorbikeService();
-        TruckService truckService= new TruckService();
+        TruckService truckService = new TruckService();
         boolean flag = true;
+
         do {
             System.out.println("ban muon xoa xe:" +
                     "\n 1.oto" +
@@ -107,7 +107,6 @@ public class TypeOfVehicleController {
             scanner.nextLine();
             System.out.println("Nhap bien so xe ban muon xoa :");
             String numberPlate = scanner.nextLine();
-
             switch (number) {
                 case 1:
                     carService.delete(numberPlate);
@@ -120,10 +119,9 @@ public class TypeOfVehicleController {
                     break;
                 case 4:
                     System.out.println("thoat chuong trinh");
-                    System.exit(0);
+                    flag = false;
                     break;
                 default:
-                    flag = false;
                     System.out.println("ban hay chon tu 1 den 4");
             }
         } while (flag);
