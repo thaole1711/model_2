@@ -22,4 +22,7 @@ public class XeTai extends PhuongTien{
         return super.toString()+
                 "trongTai=" + trongTai;
     }
+    public String getInFoToFileTai(){
+        return super.bienKiemSoat+","+super.tenHang+","+super.chuSoHuu+","+super.namSanXuat+","+this.trongTai;
+    }
 }
