@@ -19,9 +19,9 @@ public class ReadAndWriteFile {
             e.printStackTrace();
         }
     }
-    public static List<String> ReadFileCVS(String pathFlie) {
+    public static List<String> ReadFileCVS(String pathFile) {
         List<String> stringList= new ArrayList<>();
-        File file = new File(pathFlie);
+        File file = new File(pathFile);
         try(FileReader fileReader= new FileReader(file);
         BufferedReader bufferedReader =new BufferedReader(fileReader)) {
             String line="";

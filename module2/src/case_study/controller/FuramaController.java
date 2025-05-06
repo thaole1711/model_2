@@ -17,14 +17,13 @@ public class FuramaController {
                     "\n 5. Promotion Management" +
                     "\n 6. exit" +
                     "\n chức năng bạn chọn là:");
-
             boolean isNumber = true;
             do{
                 try {
                     number = Integer.parseInt(scanner.nextLine());
                     isNumber =false;
                 } catch (NumberFormatException e) {
-                    System.out.println("nhập số từ 1 đến 6");
+                    System.out.println("nhập  số từ 1 đến 6");
                 }catch (Exception e){
                     e.printStackTrace();
                 }
@@ -32,19 +31,19 @@ public class FuramaController {
 
             switch (number) {
                 case 1:
-                    EmployeeManagementController.employeeManagement();
+                    EmployeeController.employeeManagement();
                     break;
                 case 2:
-                    CustomerManagementController.customerManagement();
+                    CustomerController.customerManagement();
                     break;
                 case 3:
-                    FacilityManagementController.facilityManagement();
+                    FacilityController.facilityManagement();
                     break;
                 case 4:
-                    BookingManagementController.bookingManagement();
+                    BookingController.bookingManagement();
                     break;
                 case 5:
-                    PromotionManagementController.promotionManagement();
+                    PromotionController.promotionManagement();
                     break;
                 case 6:
                     System.out.println("thoát chương trình");
