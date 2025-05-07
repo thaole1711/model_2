@@ -1,28 +1,28 @@
 package case_study.model;
 
 public abstract class Person {
-    private String hoTen;
-    private String ngaySinh;
-    private String gioiTinh;
-    private String soCMND;
-    private String soDienThoai;
+    private String fullName;
+    private String date;
+    private String gender;
+    private String IDNumber;
+    private String phoneNumber;
     private String email;
 
-    public Person(String hoTen, String ngaySinh, String gioiTinh, String soCMND, String soDienThoai, String email) {
-        this.hoTen = hoTen;
-        this.ngaySinh = ngaySinh;
-        this.gioiTinh = gioiTinh;
-        this.soCMND = soCMND;
-        this.soDienThoai = soDienThoai;
+    public Person(String fullName, String date, String gender, String IDNumber, String phoneNumber, String email) {
+        this.fullName = fullName;
+        this.date = date;
+        this.gender = gender;
+        this.IDNumber = IDNumber;
+        this.phoneNumber = phoneNumber;
         this.email = email;
     }
 
-    public String getHoTen() {
-        return hoTen;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setHoTen(String hoTen) {
-        this.hoTen = hoTen;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getEmail() {
@@ -33,51 +33,51 @@ public abstract class Person {
         this.email = email;
     }
 
-    public String getSoDienThoai() {
-        return soDienThoai;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setSoDienThoai(String soDienThoai) {
-        this.soDienThoai = soDienThoai;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
-    public String getSoCMND() {
-        return soCMND;
+    public String getIDNumber() {
+        return IDNumber;
     }
 
-    public void setSoCMND(String soCMND) {
-        this.soCMND = soCMND;
+    public void setIDNumber(String IDNumber) {
+        this.IDNumber = IDNumber;
     }
 
-    public String getGioiTinh() {
-        return gioiTinh;
+    public String getGender() {
+        return gender;
     }
 
-    public void setGioiTinh(String gioiTinh) {
-        this.gioiTinh = gioiTinh;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getNgaySinh() {
-        return ngaySinh;
+    public String getDate() {
+        return date;
     }
 
-    public void setNgaySinh(String ngaySinh) {
-        this.ngaySinh = ngaySinh;
+    public void setDate(String date) {
+        this.date = date;
     }
 
     @Override
     public String toString() {
         return
-                "hoTen='" + hoTen + '\'' +
-                ", ngaySinh='" + ngaySinh + '\'' +
-                ", gioiTinh='" + gioiTinh + '\'' +
-                ", soCMND='" + soCMND + '\'' +
-                ", soDienThoai='" + soDienThoai + '\'' +
+                "hoTen='" + fullName + '\'' +
+                ", ngaySinh='" + date + '\'' +
+                ", gioiTinh='" + gender + '\'' +
+                ", soCMND='" + IDNumber + '\'' +
+                ", soDienThoai='" + phoneNumber + '\'' +
                 ", email='" + email + '\''
                 ;
     }
 
     public String getInfor(){
-        return this.hoTen+","+this.ngaySinh+","+this.gioiTinh+","+this.soCMND+","+this.soDienThoai+","+this.email;
+        return this.fullName +","+this.date +","+this.gender +","+this.IDNumber +","+this.phoneNumber +","+this.email;
     }
 }

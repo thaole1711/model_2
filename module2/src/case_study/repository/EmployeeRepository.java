@@ -6,7 +6,6 @@ import case_study.model.Employee;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class EmployeeRepository implements IEmployeeRepository {
     public final String stringPath = "D:\\codegym\\module2\\module2\\src\\case_study\\data\\employeeRepository.CSV";
@@ -26,7 +25,7 @@ public class EmployeeRepository implements IEmployeeRepository {
     public void update(Employee employee) {
         List<Employee> employees = findAll();
         for (int i = 0; i < employees.size(); i++) {
-            if (employees.get(i).getMaNhanVien().equals(employee.getMaNhanVien())) {
+            if (employees.get(i).getIdEmployee().equals(employee.getIdEmployee())) {
                 employees.set(i, employee);
             }
         }
@@ -47,7 +46,7 @@ public class EmployeeRepository implements IEmployeeRepository {
     public boolean findId( String id) {
         List<Employee> employeeList = findAll();
         for (int i = 0; i < employeeList.size(); i++) {
-            if (employeeList.get(i).getMaNhanVien().equals(id) ) {
+            if (employeeList.get(i).getIdEmployee().equals(id) ) {
                 return true;
             }
         }
@@ -58,7 +57,7 @@ public class EmployeeRepository implements IEmployeeRepository {
     public void delete( String id) {
         List<Employee> employeeList = findAll();
         for (int i = 0; i < employeeList.size(); i++) {
-            if (employeeList.get(i).getMaNhanVien().equals(id) ) {
+            if (employeeList.get(i).getIdEmployee().equals(id) ) {
                 employeeList.remove(i);
                 break;
             }

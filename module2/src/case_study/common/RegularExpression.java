@@ -5,7 +5,6 @@ import java.time.Period;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
-import java.util.zip.DataFormatException;
 
 public class RegularExpression {
     public static String checkId(Scanner scanner, String message) {
@@ -32,16 +31,16 @@ public class RegularExpression {
         return name;
     }
 
-    public static String checkCMND(Scanner scanner, String message) {
-        boolean checkCMND;
-        String soCMND;
+    public static String checkIdNumber(Scanner scanner, String message) {
+        boolean checkIdNumber;
+        String IdNumber;
         do {
             System.out.println(message);
-            soCMND = scanner.nextLine();
+            IdNumber = scanner.nextLine();
             String regexCMND = "^[0-9]{9,12}$";
-            checkCMND = soCMND.matches(regexCMND);
-        } while (!checkCMND);
-        return soCMND;
+            checkIdNumber = IdNumber.matches(regexCMND);
+        } while (!checkIdNumber);
+        return IdNumber;
     }
 
     public static String checkPhone(Scanner scanner, String message) {
@@ -56,22 +55,23 @@ public class RegularExpression {
         return phone;
     }
 
-    public static double checkLuong(Scanner scanner, String message) {
-        boolean checkLuong = true;
-        double luong =-1;
+    public static double checksalary(Scanner scanner, String message) {
+        boolean checksalary = true;
+
+        double salary =-1;
         do {
             System.out.println(message);
             try {
-                luong = Double.parseDouble(scanner.nextLine());
-                if (luong > 0) {
-                    checkLuong = true;
+                salary = Double.parseDouble(scanner.nextLine());
+                if (salary > 0) {
+                    checksalary = true;
                 }
             } catch (NumberFormatException e) {
                 System.out.println("nhập số");
             }
 
-        } while (!checkLuong);
-        return luong;
+        } while (!checksalary);
+        return salary;
     }
 
     public static boolean is18OrOlder(String string) {
@@ -91,19 +91,27 @@ public class RegularExpression {
     }
 
     public static String checkdate(Scanner scanner, String string) {
-        boolean check;
         boolean is18Older;
         String date;
         do {
             System.out.println(string);
             date = scanner.nextLine();
-            String regexDate = "^(0[1-9]|[12][0-9]|3[01])/((0[1-9]|1[0-2])/(19|20)\\d\\d)$";
-            check = date.matches(regexDate);
             is18Older = is18OrOlder(date);
 
-        } while (!check || !is18Older);
+        } while (!is18Older);
         return date;
 
     }
+    public static String checkIdCustomer(Scanner scanner, String message) {
+        boolean check;
+        String id;
+        do {
+            System.out.println(message);
+            id = scanner.nextLine();
+            String regexId = "^K+H+-+[0-9]{4}$";
+            check = id.matches(regexId);
+        } while (!check);
+        return id;
 
+    }
 }
