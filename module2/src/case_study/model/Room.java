@@ -21,4 +21,9 @@ public class Room extends Facility{
         return super.toString() +
                 ", dichVuMienPhiDiKem='" + dichVuMienPhiDiKem ;
     }
+
+
+    public String getInfoRoom(int count) {
+        return super.getInfoFacility()+","+this.dichVuMienPhiDiKem+","+count;
+    }
 }

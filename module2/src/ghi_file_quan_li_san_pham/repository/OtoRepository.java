@@ -29,21 +29,20 @@ public class OtoRepository implements IOtoRepository{
 
     @Override
     public void delete(int id) {
-        boolean flag=false;
         List<Oto> otoList= findAll();
         for (int i = 0; i < otoList.size(); i++) {
             if( otoList.get(i).getBienKiemSoat().equals(id)){
-                flag =true;
                 otoList.remove(i);
+                break;
             }
         }
-        if(flag){
+
             List<String> stringList=new ArrayList<>();
             for (int i = 0; i < otoList.size(); i++) {
                 stringList.add(otoList.get(i).getInFoToFileOto());
             }
             ReadAndWriteFile.WriteFileCVS(FILE_CAR,stringList,false);
-        }
+
 
 
     }

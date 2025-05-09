@@ -21,4 +21,9 @@ public class XeMay extends PhuongTien{
         return super.toString() +
                 ",congSuat=" + congSuat;
     }
+
+    @Override
+    public String getInfo() {
+        return super.getInfo()+","+this.congSuat;
+    }
 }

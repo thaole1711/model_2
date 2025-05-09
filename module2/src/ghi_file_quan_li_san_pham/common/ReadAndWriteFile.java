@@ -8,7 +8,7 @@ import java.util.List;
 public class ReadAndWriteFile {
     public static void WriteFileCVS(String pathFile, List<String> stringList, boolean append)  {
         File file = new File(pathFile);
-        try (FileWriter fileWriter = new FileWriter(file);
+        try (FileWriter fileWriter = new FileWriter(file,append);
              BufferedWriter bufferedWriter = new BufferedWriter(fileWriter)) {
             for (String line : stringList) {
                 bufferedWriter.write(line);
@@ -34,5 +34,7 @@ public class ReadAndWriteFile {
         }
         return stringList;
     }
+
+
 }
 

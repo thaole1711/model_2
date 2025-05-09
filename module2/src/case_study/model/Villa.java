@@ -43,4 +43,9 @@ public class Villa extends Facility{
                 ", dientichHoBoi=" + dientichHoBoi +
                 ", soTang=" + soTang ;
     }
+
+
+    public String getInfoVilla(int count) {
+    return super.getInfoFacility()+","+this.tieuChuanPhong+","+this.dientichHoBoi+","+this.soTang+count;
+    }
 }

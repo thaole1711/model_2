@@ -52,4 +52,7 @@ public abstract class PhuongTien {
                 ", chuSoHuu='" + chuSoHuu + '\'' +
                 ", namSanXuat=" + namSanXuat ;
     }
+    public String getInfo(){
+        return this.bienKiemSoat+","+this.tenHang+","+this.chuSoHuu+","+this.namSanXuat;
+    }
 }

@@ -32,4 +32,9 @@ public class House extends Facility{
                 ", tieuChuanPhong='" + tieuChuanPhong + '\'' +
                 ", soTang=" + soTang;
     }
+
+
+    public String getInfoHouse(int count) {
+        return super.getInfoFacility()+","+this.tieuChuanPhong+","+this.soTang+","+count;
+    }
 }

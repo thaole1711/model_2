@@ -1,8 +1,10 @@
 package case_study.model;
 
 public abstract class Facility {
-    protected String maDichVu,tenDichVu;
-    protected double dienTichSuDung,chiPhiThue;
+    protected String maDichVu;
+    protected String  tenDichVu;
+    protected double dienTichSuDung;
+    protected double  chiPhiThue;
     protected int soLuongNguoi;
     protected String kieuThue;
 
@@ -72,5 +74,8 @@ public abstract class Facility {
                 ", chiPhiThue=" + chiPhiThue +
                 ", soLuongNguoi=" + soLuongNguoi +
                 ", kieuThue='" + kieuThue + '\'' ;
+    }
+    public String getInfoFacility(){
+        return this.maDichVu+","+this.tenDichVu+","+this.dienTichSuDung+","+this.chiPhiThue+","+this.soLuongNguoi+","+this.kieuThue;
     }
 }

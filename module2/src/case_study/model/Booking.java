@@ -75,4 +75,5 @@ public class Booking {
                 ", maKhachHang='" + maKhachHang + '\'' +
                 ", maDichVu='" + maDichVu + '\'' ;
     }
+
 }

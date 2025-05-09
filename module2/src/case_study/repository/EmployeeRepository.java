@@ -12,8 +12,9 @@ public class EmployeeRepository implements IEmployeeRepository {
 
     @Override
     public List<Employee> findAll() {
-        List<String> stringList = ReadAndWriteFileCSV.ReadFileCSV(stringPath);
         List<Employee> employees = new ArrayList<>();
+        List<String> stringList = ReadAndWriteFileCSV.ReadFileCSV(stringPath);
+
         String[] array;
         for (String string : stringList) {
             array = string.split(",");
